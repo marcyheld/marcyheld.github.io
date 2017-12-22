@@ -14,6 +14,10 @@
 	font-size: 20px;
 }
 
+.connect_text {
+	font-family: "Helvetica Neue";
+	font-size: 14px;
+}
 
 .footer_style {
 	font-family: "Helvetica Neue";
@@ -26,11 +30,6 @@
 	text-align: center;
 
 	display: block;
-}
-
-.footer_text {
-	display: inline-block;
-	margin-left: 5%;
 }
 
 .footer_logo {
