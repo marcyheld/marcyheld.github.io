@@ -1,41 +1,76 @@
-.underConstruction {
+@import url('https://fonts.googleapis.com/css?family=Lato: 300, 400, 700');
+
+body {
+	position: relative;
+}
+
+.nav_style{
+
+	color: black !important;
+
+	font-family: "Lato" !important;
+	font-size: 12pt !important;
+}
+
+.nav_class {
+	padding-top: 1%;
+
+	background-color: white;
+}
+
+.homepage_heading {
+	font-family: "Lato" !important;
+
+	font-size: 45px;
+	letter-spacing: .1em;
+
 	text-align: center;
+
+	padding-top: 10%;
+	padding-bottom: -2%;
 }
 
-.moji {
-	width: 40px;
-	margin-top: 4%;
-	margin-bottom: 20%;
-	height: auto;
-}
+.homepage_subheading {
+	font-family: "Lato" !important;
 
-.body_text {
-	font-family: "Helvetica Neue";
 	font-size: 20px;
+	font-weight: 300;
+
+	text-align: center;
 }
 
-.connect_text {
-	font-family: "Helvetica Neue";
-	font-size: 14px;
+.homepage_projectlink {
+	width: 95%;
 }
 
-.footer_style {
-	font-family: "Helvetica Neue";
-	font-size: 8pt;
+.proj_caption {
+	font-family: "Lato" !important;
 
-	margin-top: 4%;
-
-	margin-bottom: -8px;
+	font-size: 18px;
+	font-weight: 300;
 
 	text-align: center;
 
-	display: block;
+}
+
+.about_text {
+	margin-top: 4%;
+
+	font-family: "Lato";
+
+	font-size: 18px;
+
+	text-align: center;
+
+	padding-bottom: 2%;
+
 }
 
 .footer_logo {
-	width: 20px;
-	height: auto;
+	width: 30% !important;
+	margin: auto;
 
-	vertical-align: middle;
-	margin-right: 5px;
+	margin-top: 20%;
+
+	margin-bottom: 5%;
 }
