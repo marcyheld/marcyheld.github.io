@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Marcy Held</title>
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8="crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="static/css/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
+
+		<script type="text/javascript"> 
+			$(function () {
+    			$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+			});
+			//<![CDATA[ 
+			// window.onload=function(){ 
+			// $('nav a').on('click', function() {
+
+			// var scrollAnchor = $(this).attr('data-scroll'),
+			// scrollPoint = $('p[data-anchor="' + scrollAnchor + '"]').offset().top -28;
+
+			// $('body,html').animate({
+			// scrollTop: scrollPoint
+			// }, 500);
+
+			// return false;
+
+			// })
+
+
+			// $(window).scroll(function() {
+			// var windscroll = $(window).scrollTop();
+			// 	if (windscroll >= 100) {
+			// 		$('nav').addClass('fixed');
+			// 		$('.wrapper p').each(function(i) {
+			// 			if ($(window).width() < 768) {
+			// 				if ($(this).position().top <= windscroll - 1500) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+			// 			}
+
+			// 			else {
+			// 				if ($(this).position().top <= windscroll - 700) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+
+			// 				}
+						
+			// 		});
+
+			// } else {
+
+			// 	$('nav').removeClass('fixed');
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a:first').addClass('active');
+			// 	}
+
+
+			// }).scroll();} 
+			//]]> 
+
+			// ******************** 2ND ATTEMPT ********************************
+
+			// $('body').scrollspy({ target: '#nav_scrollspy' })
+			// $('[data-spy="scroll"]').each(function () {
+			// 	var $spy = $(this).scrollspy('refresh')
+			// })
+
+			// $('#nav_scollspy').on('activate.bs.scrollspy', function () {
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a').eq(i).addClass('active');
+
+			// *************************** 3RD ATTEMPT ***************************
+			$(document).ready(function(){
+	
+			// Scrollspy initiation
+			$('body').scrollspy({ 
+			target: '#scroll-spy',
+			offset: 70
+			});
+
+			// On render, adjust body padding to ensure last Scroll target can reach top of screen
+			var height = $('#howto').innerHeight();
+			var windowHeight = $(window).height();
+			var navHeight = $('nav.navbar').innerHeight();
+			var siblingHeight = $('#howto').nextAll().innerHeight();
+
+
+			if(height < windowHeight){
+				$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+			}
+
+			// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
+			$(window).resize(function(event){
+				var height = $('#howto').innerHeight();
+				var windowHeight = $(window).height();
+				var navHeight = $('nav.navbar').innerHeight();
+				var siblingHeight = $('#howto').nextAll().innerHeight();
+		
+		
+				if(height < windowHeight){
+					$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+				}
+			});
+	
+			$('nav.navbar a, .scrollTop').click(function(event){
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash (#)
+					var hash = this.hash;
+					
+					// Ensure no section has relevant class
+					$('section').removeClass("focus");
+
+					// Add class to target
+					$(hash).addClass("focus");
+
+					// Remove thy class after timeout
+					setTimeout(function(){
+						$(hash).removeClass("focus");
+					}, 2000);			
+			
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top - 69
+					}, 600, function(){
+						
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;				
+					});
+							
+					// Collapse Navbar for mobile view
+					$(".navbar-collapse").collapse('hide');			
+				}
+
+			});
+
+		$(window).scroll(function(){
+			var scrollPos = $('body').scrollTop();
+			if(scrollPos > 0){
+				$('.navbar').addClass('show-color');
+				$('.scrollTop').addClass('show-button');
+			} else{
+				$('.navbar').removeClass('show-color');
+				$('.scrollTop').removeClass('show-button');
+			}
+		
+		});
+	});
+
+			})
+		</script> 
+	</head>
+
+	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="100">
+
+		<!-- Navigation -->
+
+		<header>
+
+		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy"> <!-- mx-4 -->
+
+		    	<a class="nav-link nav_style" href="index.html" data-scroll="">Home</a>
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="index.html#portfolio">Portfolio</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="index.html#about">About</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
+<!-- 			  </li> -->
+
+			</nav>
+
+		</header>
+
+		<div class="container-fluid text-center">
+			<h1 class="indiv_proj_heading">Local Vote<h1>
+		</div>
+		<div class="container-fluid text-center">
+			<h2 class="indiv_proj_subheading">Increasing civic engagement through access to information about local politics<h2>
+		</div>
+
+		<div class="container-fluid text-center">
+			<div class="row">
+				<!-- <div class="col-md-1 desktop_only">
+				</div> -->
+
+				<figure class="col-xs-12 text-center google_headerPhoto" style="margin-top:3%;">
+					<!--Large image-->
+					<a href="static/img/localvote_header.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_header.png" class="img-fluid">
+					</a>
+				</figure>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-2 col-sm-6">
+					<p class="summary_heading">TIMELINE</p>
+					<p class="summary_text">Sept - Dec 2016 (14 weeks)</p>
+				</div>
+
+				<div class="col-md-2 col-sm-6">
+					<p class="summary_heading">MY ROLE</p>
+					<p class="summary_text">UX designer</p>
+				</div>
+
+				<div class="col-md-2 col-sm-6">
+					<p class="summary_heading">SKILLS</p>
+					<p class="summary_text">Interaction design</p>
+					<p class="summary_text">Interviews</p>
+					<p class="summary_text">Personas</p>
+					<p class="summary_text">Sketching</p>
+					<p class="summary_text">Storyboarding</p>
+					<p class="summary_text">Prototyping</p>
+				</div>
+
+				<div class="col-md-2 col-sm-6">
+					<p class="summary_heading">TEAM</p>
+					<p class="summary_text">Individual project</p>
+				</div>
+				
+				<div class="col-md-2">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid" style="margin-top:8%">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<img src="static/img/localvote_process.png" class="indiv_proj_img">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-6">
+					<h3 class="indiv_proj_sectionheading">PROBLEM STATEMENT</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">There are millions of millennial voters who participate in national elections but do not participate in elections that take place in their own cities. In general, older, whiter, and more affluent populations dominate the polls during local elections, especially in urban areas.</p>
+					<p class="indiv_proj_text"><b>This means that the opinions and perspectives of younger and minority voters are disproportionately underrepresented in local elections.</b></p>
+					<p class="indiv_proj_text">Regarding this lack of engagement with local politics, 75% of millennials said that “not having enough information about the candidates” and a “lack of news coverage” are the most significant barriers that prevent them from participating in local elections.</p>
+					<p class="indiv_proj_text" style="font-size: 24px;">How can we engage more people in elections at a local level?</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">	
+					<p class="indiv_proj_img_caption" style="padding-left: 5%"> “Why Millennials don’t Vote for Mayor,” Knight Foundation, 4 June 2015.</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-6">
+					<h3 class="indiv_proj_sectionheading">DEFINE</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I completed a series observations and interviews with patrons and staff at the Ann Arbor District Library, as well as university students.</p>
+					<p class="indiv_proj_text">From these interactions, I learned:</p>
+
+					<ul>
+						<li class="indiv_proj_text_listItem">The local library is a trusted community information source</li>
+						<li class="indiv_proj_text_listItem">People who access resources at the library may not have technology at home</li>
+						<li class="indiv_proj_text_listItem">People prefer to make voting decisions in private</li>
+					</ul>
+
+					<p class="indiv_proj_text">Although I was interested in making a public installation about local politics, I realized that a public installation would not be an effective way to help people make voting plans and show up to the polls on election day.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_whiteboard.JPG" class="indiv_proj_img">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">ANALYZE</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I utilized information from my interviews and observations, as well as secondary research, to create 3 personas of target users.</p>
+					<p class="indiv_proj_text">Each user is a Michigan resident that has varying experience with local politics and different reasons for wanting to learn more about local political issues.</p> 
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_persona1.png" class="indiv_proj_img" style="border: 1px solid;">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_persona2.png" class="indiv_proj_img" style="border: 1px solid;">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_persona3.png" class="indiv_proj_img" style="border: 1px solid;">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">IDEATE</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I sketched a variety of solutions varying from public installations to mobile applications.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<figure class="col-md-8 text-center">
+    				<!--Large image-->
+    				<a href="static/img/localvote_sketches.JPG" data-size="1600x2349" style="margin-left:5%;">
+        			<!-- Thumbnail-->
+        			<img src="static/img/localvote_sketches.JPG" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I then completed a variety of storyboards, illustrating different scenarios for each of my sketched solutions.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<figure class="col-md-8 text-center">
+    				<!--Large image-->
+    				<a href="static/img/localvote_storyboard.JPG" data-size="1600x2349" style="margin-left:5%;">
+        			<!-- Thumbnail-->
+        			<img src="static/img/localvote_storyboard.JPG" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">After completing a variety of sketches and user interviews, I realized that I wanted to create a tool that could be implemented within the technology resources at a local library.</p>
+					<p class="indiv_proj_text">In order to determine various design decisions for interactions on the Local Vote interface, I completed a QOC (Questions Options Criteria) analysis.</p>
+
+					<p class="indiv_proj_text">As a result of this analysis I decided to allow users to:</p>
+
+					<ul>
+						<li class="indiv_proj_text_listItem">Log in to the app only using their zip code,</li>
+						<li class="indiv_proj_text_listItem">Both print and email any information they want to save,</li>
+						<li class="indiv_proj_text_listItem">Select filters that can later be edited regarding news updates and other topical information about local political issues.</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_qoc1.png" class="indiv_proj_img">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_qoc2.png" class="indiv_proj_img">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_qoc3.png" class="indiv_proj_img">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">The QOC informed the following 3 sketches of the login flow:</p>
+					<ul>
+						<li class="indiv_proj_text_listItem">Approach 1 includes selecting a series of content filters upon login, </li>
+						<li class="indiv_proj_text_listItem">Approach 2 depicts a quick user survey after onboarding, </li>
+						<li class="indiv_proj_text_listItem">and approach 3 shows what the login process would look like with no content filtering options.</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<figure class="col-md-4 text-center indiv_proj_img">
+					<!--Large image-->
+					<a href="static/img/localvote_login1a.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_login1a.png" class="img-fluid">
+					</a>
+				</figure>
+
+				<figure class="col-md-4 text-center indiv_proj_img">
+					<!--Large image-->
+					<a href="static/img/localvote_login1b.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_login1b.png" class="img-fluid">
+					</a>
+				</figure>
+
+				<figure class="col-md-4 text-center indiv_proj_img">
+					<!--Large image-->
+					<a href="static/img/localvote_login2a.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_login2a.png" class="img-fluid">
+					</a>
+				</figure>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<figure class="col-md-4 text-center indiv_proj_img">
+					<!--Large image-->
+					<a href="static/img/localvote_login2b.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_login2b.png" class="img-fluid">
+					</a>
+				</figure>
+
+				<figure class="col-md-4 text-center indiv_proj_img">
+					<!--Large image-->
+					<a href="static/img/localvote_login3a.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_login3a.png" class="img-fluid">
+					</a>
+				</figure>
+
+				<figure class="col-md-4 text-center indiv_proj_img">
+					<!--Large image-->
+					<a href="static/img/localvote_login3b.png" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/localvote_login3b.png" class="img-fluid">
+					</a>
+				</figure>
+
+			</div>
+		</div>
+
+	
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">PROTOTYPE</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+
+					<p class="indiv_proj_text">I created both a paper (lo-fi) and digital (hi-fi) prototype for my Local Vote application design.</p>
+					<p class="indiv_proj_text">Watch the paper prototype below:</p>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+
+					<video id="prototypeMovie" src="static/img/localvote_paperprototype.mov" style="margin-left: 10%;"width= 50% controls></video>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">DELIVER</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">After a few more feedback sessions I presented my final project to my classmates. I also reflected on the process of designing this application and who I am as a designer.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<div class="col-md-8 text-center">
+					<img src="static/img/localvote_deliver.png" class="indiv_proj_img">
+				</div>
+
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">REFLECTION</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I hope that the Local Vote application leads to an increased participation in local elections among millennial voters. It is also my goal that this application will convey the interrelated nature of voting, reading the news, and generally being involved in and informed about what is going on in one’s local community. </p>
+					<p class="indiv_proj_text">Although the main purpose of this application is to provide users with the opportunity to learn about local politicians and make a voting plan for election day, I hope that their interactions with this application convey the reality that civic engagement is important and can happen at any time of the year, not only during elections.</p>
+				</div>
+			</div>
+		</div>
+
+
+		<footer>
+
+			<div class="container-fluid text-center footer_text">
+				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
+			</div>
+
+			<div class="container-fluid footer_icons text-center">
+
+				<a href="https://www.linkedin.com/in/marcy-held-837917b0/"><img class = "footer_logo" src="static/img/logo_linkedin.png" alt="Connect with Marcy on Linkedin">
+				</a>
+
+				<a href="https://www.instagram.com/marcyheld/"><img class = "footer_logo" src="static/img/logo_instagram.png" alt="Connect with Marcy on Instagram"></a>
+
+
+
+				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
+
+
+			</div>
+
+		</footer>
+
+	</body>
+
+</html>

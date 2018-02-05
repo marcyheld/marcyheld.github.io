@@ -5,93 +5,440 @@
 		<meta charset="utf-8">
 		<title>Marcy Held</title>
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8="crossorigin="anonymous"></script> -->
 
 		<link rel="stylesheet" href="static/css/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="static/css/bootstrap.css">
+
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 
 		<link rel="stylesheet" type="text/css" href="static/css/style.css">
 
+		<script src="static/js/bootstrap.bundle.min.js"> </script>
+		<script src="static/js/bootstrap.min.js"> </script>
+		<script src="static/js/bootstrap.js"> </script>
+
 		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
 
+		<!-- SCRIPT IMPORTS FOR JOSUE CODE -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="//d3js.org/d3.v3.min.js"></script>
+  		<script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript"> 
+			//<![CDATA[ 
+			// window.onload=function(){ 
+			// $('nav a').on('click', function() {
+
+			// var scrollAnchor = $(this).attr('data-scroll'),
+			// scrollPoint = $('p[data-anchor="' + scrollAnchor + '"]').offset().top -28;
+
+			// $('body,html').animate({
+			// scrollTop: scrollPoint
+			// }, 500);
+
+			// return false;
+
+			// })
+
+
+			// $(window).scroll(function() {
+			// var windscroll = $(window).scrollTop();
+			// 	if (windscroll >= 100) {
+			// 		$('nav').addClass('fixed');
+			// 		$('.wrapper p').each(function(i) {
+			// 			if ($(window).width() < 768) {
+			// 				if ($(this).position().top <= windscroll - 1500) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+			// 			}
+
+			// 			else {
+			// 				if ($(this).position().top <= windscroll - 700) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+
+			// 				}
+						
+			// 		});
+
+			// } else {
+
+			// 	$('nav').removeClass('fixed');
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a:first').addClass('active');
+			// 	}
+
+
+			// }).scroll();} 
+			//]]> 
+
+			// ******************** 2ND ATTEMPT ********************************
+
+			// $('body').scrollspy({ target: '#nav_scrollspy' })
+			// $('[data-spy="scroll"]').each(function () {
+			// 	var $spy = $(this).scrollspy('refresh')
+			// })
+
+			// $('#nav_scollspy').on('activate.bs.scrollspy', function () {
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a').eq(i).addClass('active');
+
+			// *************************** 3RD ATTEMPT ***************************
+	// 		$(document).ready(function(){
+	
+	// 		// Scrollspy initiation
+	// 		$('body').scrollspy({ 
+	// 		target: '#scroll-spy',
+	// 		offset: 70
+	// 		});
+
+	// 		// On render, adjust body padding to ensure last Scroll target can reach top of screen
+	// 		var height = $('#howto').innerHeight();
+	// 		var windowHeight = $(window).height();
+	// 		var navHeight = $('nav.navbar').innerHeight();
+	// 		var siblingHeight = $('#howto').nextAll().innerHeight();
+
+
+	// 		if(height < windowHeight){
+	// 			$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+	// 		}
+
+	// 		// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
+	// 		$(window).resize(function(event){
+	// 			var height = $('#howto').innerHeight();
+	// 			var windowHeight = $(window).height();
+	// 			var navHeight = $('nav.navbar').innerHeight();
+	// 			var siblingHeight = $('#howto').nextAll().innerHeight();
+		
+		
+	// 			if(height < windowHeight){
+	// 				$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+	// 			}
+	// 		});
+	
+	// 		$('nav.navbar a, .scrollTop').click(function(event){
+	// 			// Make sure this.hash has a value before overriding default behavior
+	// 			if (this.hash !== "") {
+	// 				// Prevent default anchor click behavior
+	// 				event.preventDefault();
+
+	// 				// Store hash (#)
+	// 				var hash = this.hash;
+					
+	// 				// Ensure no section has relevant class
+	// 				$('section').removeClass("focus");
+
+	// 				// Add class to target
+	// 				$(hash).addClass("focus");
+
+	// 				// Remove thy class after timeout
+	// 				setTimeout(function(){
+	// 					$(hash).removeClass("focus");
+	// 				}, 2000);			
+			
+ //    // Using jQuery's animate() method to add smooth page scroll
+ //    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+	// 				$('html, body').animate({
+	// 					scrollTop: $(hash).offset().top - 69
+	// 				}, 600, function(){
+						
+	// 					// Add hash (#) to URL when done scrolling (default click behavior)
+	// 					window.location.hash = hash;				
+	// 				});
+							
+	// 				// Collapse Navbar for mobile view
+	// 				$(".navbar-collapse").collapse('hide');			
+	// 			}
+
+	// 		});
+
+	// 	$(window).scroll(function(){
+	// 		var scrollPos = $('body').scrollTop();
+	// 		if(scrollPos > 0){
+	// 			$('.navbar').addClass('show-color');
+	// 			$('.scrollTop').addClass('show-button');
+	// 		} else{
+	// 			$('.navbar').removeClass('show-color');
+	// 			$('.scrollTop').removeClass('show-button');
+	// 		}
+		
+	// 	});
+	// });
+
+	// 		})
+		window.onload=function(){
+      	//click to scroll to certain place and have different style
+      	$('nav a').on('click', function() {
+
+        var scrollAnchor = $(this).attr('data-scroll'),
+            scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 35; //MARCY: change the offset here (-35)... this number must be smaller than the next offset below
+
+        $('body,html').animate({
+            scrollTop: scrollPoint
+        }, 500);
+
+        return false;
+      })
+
+      //style of nav bar changes according to the scolled place
+      $(window).scroll(function() {
+          var windscroll = $(window).scrollTop();
+          if (windscroll >= 50) {
+              $('nav').addClass('fixed');
+              $('.wrapper section').each(function(i) {
+                  if ($(this).position().top <= windscroll + 35) { //MARCY: this number should be larger than the offset on top
+                      $('nav a.active').removeClass('active');
+                      $('nav a').eq(i).addClass('active');
+                  }
+              });
+
+          } else {
+              $('nav').removeClass('fixed');
+              $('nav a.active').removeClass('active');
+              $('nav a:first').addClass('active');
+          }
+      });
+    }
+			
+		</script> 
 	</head>
 
-	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="50">
+	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="100">
 
 		<!-- Navigation -->
 
 		<header>
 
-		    <ul class="nav navbar-right justify-content-end mx-4 fixed-top nav_class" id="nav_scrollspy">
+		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy"> <!-- mx-4 -->
 
-			  <li class="nav-item">
-			    <a class="nav-link active nav_style" href="#home">Portfolio</a>
-			  </li>
+		    	<a class="nav-link nav_style" href="" data-scroll="">Home</a>
 
-			  <li class="nav-item">
-			    <a class="nav-link nav_style" href="#about">About</a>
-			  </li>
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="#portfolio" data-scroll="portfolio">Portfolio</a>
+<!-- 			  </li> -->
 
-			  <li class="nav-item">
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="#about" data-scroll="about">About</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
 			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
-			  </li>
+<!-- 			  </li> -->
 
-			</ul>
+			</nav>
 
 		</header>
 
-		<div class="container-fluid" id="home">
-			<div class="row">
+		<div class="container-fluid wrapper">
+			<div class="row" id="top" data-anchor="top">
 				<div class="col-lg">
 					<p class = "homepage_heading">Marcy &nbsp; Held</p>
-					<p class = "homepage_subheading">Interaction designer + researcher</p>
+					<p class = "homepage_subheading">Interaction designer</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="container-fluid about_text" id = "about">
-				<p>New content coming soon</p>
-				<p>Check out some of my projects <a href="http://cargocollective.com/marcyheld">here</a></p>
-		</div>
+		<!-- <div class="container-fluid">
 
-		<!-- Projects -->
+				<div class="text-center">
+					<img class="hompage_meimg" src="static/img/homepage_me.png">
+				</div>
+
+		</div> -->
 
 		<div class="container-fluid">
-			<div class="row project_links">
+			<div class="row">
 
-				<div class="col-md-4">
-					<a href="#"><img src = "static/img/homepage_localvote.jpg" class = "homepage_projectlink"></a>
-					<p class="proj_caption">
-						Local Vote application
-					</p>
+				<div class="col-md-3">
+					<img class="hompage_meimg full-width" src="static/img/homepage_me.png">
 				</div>
 
-				<div class="col-md-4">
-					<a href="#"><img src="static/img/homepage_google.jpg" class = "homepage_projectlink"></a>
-					<p class="proj_caption">
-						Google UX design internship
-					</p>
+				<div class="col-md-8">
+					<p class="homepage_topquote">I believe in an iterative approach to problem solving, driven by user research, and that thoughtful design can have a positive social impact.</p>
 				</div>
 
-				<div class="col-md-4">
-					<a href="#"><img src="static/img/homepage_lsa.jpg" class = "homepage_projectlink"></a>
-					<p class="proj_caption">
-						LSA Honors website usability testing
-					</p>
+			</div>
+		</div>
+
+		<!-- Portfolio -->
+
+		<div class="container-fluid about_container"> <!--full-width-div-->
+			<div class="row">
+
+				<!-- <div class="col-md-3">
+				</div> -->
+				<div class="col-md-4 col-sm-8">
+					<p class="portfolio_heading" id="portfolio" data-anchor="portfolio">PORTFOLIO</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4 image_container text-center">
+					<a href="localvote.html"><img src = "static/img/homepage_localvote.jpg" class = "homepage_projectlink">
+					<div class="middle">
+						<div class="proj_text">LOCAL VOTE</div>
+					</div>
+					</a>
+				</div>
+
+				<div class="col-md-4 image_container text-center">
+					<a href="google.html"><img src="static/img/homepage_google.jpg" class = "homepage_projectlink">
+					<div class="middle">
+						<div class="proj_text">SUMMER @ GOOGLE NYC</div>
+					</div>
+					</a>
+				</div>
+
+				<div class="col-md-4 image_container text-center">
+					<a href="lsahonors.html"><img src="static/img/homepage_lsa.jpg" class = "homepage_projectlink">
+					<div class="middle">
+						<div class="proj_text">LSA HONORS</div>
+					</div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- About -->
+
+		<div class="container-fluid about_container"> <!--full-width-div-->
+			<div class="row">
+
+				<!-- <div class="col-md-3">
+				</div> -->
+				<div class="col-md-4 col-sm-8">
+					<p class="about_heading" id = "about" data-anchor="about">ABOUT</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid"> <!--full-width-div-->
+			<div class="row">
+
+				<div class="col-md-4 col-sm-8">
+					<img src="static/img/me.jpg" class="about_img">
+				</div>
+
+				<div class="col-md-6 col-sm-10">
+					<p class="bio_textA">I came to UX design from an academic background in the humanities, and I bring a practical, user-focused approach to all of my projects.</p>
+
+					<!-- <p class="bio_textB"><strong>I believe in an iterative approach to problem solving, driven by user research, and that thoughtful design can have a positive social impact.</strong></p> -->
+
+					<p class="bio_textB">Before coming to grad school at the University of Michigan I worked in radio and in art museums, and I received my B.A. in Global Studies with a minor in photography from Carnegie Mellon University in 2013.</p>
+
+					<p class="bio_textB">I am currently:</p>
+						<ul class="bio_text_currentList">
+							<li>conducting UX research to develop next-gen employment tools,</li>
+							<li>exploring agile development methodologies as they apply to managing web development projects,</li>
+							<li>combining my passions for design and data in a personal informatics project focused on sustainability,</li>
+							<li>building my skills in hardware prototyping in a UX capstone course
+							</li>
+						</ul>
+
+					<p class="bio_textB">If you'd want to talk more about my past projects or current work, let's get in touch!</p>
+				</div>
+
+				<div class="col-md-2">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid skills_container">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-10 col-sm-6">
+					<p class="skills_heading">SKILLS</p>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="container-fluid about_info">
+			<div class="row">
+
+				<!-- <div class="col-md-3 col-sm-8">
+				</div> -->
+				<div class = "col-md-2">
+				</div>
+
+				<div class="col-md-3 col-sm-6 text-center">
+					<p class="skills_col_label">DESIGN</p>
+					<p class="skills_first_item">User journeys</p>
+					<p class="skills_item">Sketching</p>
+					<p class="skills_item">Personas</p>
+					<p class="skills_item">Storyboarding</p>
+					<p class="skills_item">Paper prototyping</p>
+					<p class="skills_item">Digital prototyping</p>
+					<p class="skills_item">Agile development</p>
+				</div>
+
+				<div class="col-md-3 col-sm-6 text-center">
+					<p class="skills_col_label">RESEARCH</p>
+					<p class="skills_first_item">Contextual inquiry</p>
+					<p class="skills_item">Semi-structured interviews</p>
+					<p class="skills_item">Interview coding</p>
+					<p class="skills_item">Heuristic evaluation</p>
+					<p class="skills_item">Comparative analysis</p>
+					<p class="skills_item">Usability testing</p>
+				</div>
+
+				<div class="col-md-3 col-sm-6 text-center">
+					<p class="skills_col_label">SOFTWARE</p>
+						<class="row">
+							<div class="col-md-12 software_logo_spacing">
+								<img src="static/img/software_python.png" class="skills_logo">
+								<img src="static/img/software_java.png" class="skills_logo">
+								<img src="static/img/software_sql.png" class="skills_logo">
+							</div>
+						<class="row">
+							<div class="col-md-12 software_logo_spacing">
+								<img src="static/img/software_html.png" class="skills_logo">
+								<img src="static/img/software_css.png" class="skills_logo">
+								<img src="static/img/software_js.png" class="skills_logo">
+							</div>
+						<class="row">
+							<div class="col-md-12 software_logo_spacing">
+								<img src="static/img/software_xd.svg" class="skills_logo">
+								<img src="static/img/software_photoshop.svg" class="skills_logo">
+								<img src="static/img/software_illustrator.png" class="skills_logo">
+							</div>
+						<class="row">
+							<div class="col-md-12 software_logo_spacing">
+								<img src="static/img/software_audition.png" class="skills_logo">
+								<img src="static/img/software_sketch.png" class="skills_logo">
+								<img src="static/img/software_invision.svg" class="skills_logo">
+							</div>
 				</div>
 
 			</div>
 		</div>
 
 		<footer>
-			<div class="footer_content text-center">
+
+			<div class="container-fluid text-center footer_text">
+				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
+			</div>
+
+			<div class="container-fluid footer_icons text-center">
 
 				<a href="https://www.linkedin.com/in/marcy-held-837917b0/"><img class = "footer_logo" src="static/img/logo_linkedin.png" alt="Connect with Marcy on Linkedin">
 				</a>
 
-
-			
 				<a href="https://www.instagram.com/marcyheld/"><img class = "footer_logo" src="static/img/logo_instagram.png" alt="Connect with Marcy on Instagram"></a>
 
 
@@ -99,8 +446,11 @@
 				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
 
 
-				</div>
 			</div>
+
+			<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
 		</footer>
 
 	</body>

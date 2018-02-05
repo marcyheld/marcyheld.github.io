@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Marcy Held</title>
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8="crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="static/css/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
+
+		<script type="text/javascript"> 
+			$(function () {
+    			$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+			});
+			//<![CDATA[ 
+			// window.onload=function(){ 
+			// $('nav a').on('click', function() {
+
+			// var scrollAnchor = $(this).attr('data-scroll'),
+			// scrollPoint = $('p[data-anchor="' + scrollAnchor + '"]').offset().top -28;
+
+			// $('body,html').animate({
+			// scrollTop: scrollPoint
+			// }, 500);
+
+			// return false;
+
+			// })
+
+
+			// $(window).scroll(function() {
+			// var windscroll = $(window).scrollTop();
+			// 	if (windscroll >= 100) {
+			// 		$('nav').addClass('fixed');
+			// 		$('.wrapper p').each(function(i) {
+			// 			if ($(window).width() < 768) {
+			// 				if ($(this).position().top <= windscroll - 1500) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+			// 			}
+
+			// 			else {
+			// 				if ($(this).position().top <= windscroll - 700) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+
+			// 				}
+						
+			// 		});
+
+			// } else {
+
+			// 	$('nav').removeClass('fixed');
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a:first').addClass('active');
+			// 	}
+
+
+			// }).scroll();} 
+			//]]> 
+
+			// ******************** 2ND ATTEMPT ********************************
+
+			// $('body').scrollspy({ target: '#nav_scrollspy' })
+			// $('[data-spy="scroll"]').each(function () {
+			// 	var $spy = $(this).scrollspy('refresh')
+			// })
+
+			// $('#nav_scollspy').on('activate.bs.scrollspy', function () {
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a').eq(i).addClass('active');
+
+			// *************************** 3RD ATTEMPT ***************************
+			$(document).ready(function(){
+	
+			// Scrollspy initiation
+			$('body').scrollspy({ 
+			target: '#scroll-spy',
+			offset: 70
+			});
+
+			// On render, adjust body padding to ensure last Scroll target can reach top of screen
+			var height = $('#howto').innerHeight();
+			var windowHeight = $(window).height();
+			var navHeight = $('nav.navbar').innerHeight();
+			var siblingHeight = $('#howto').nextAll().innerHeight();
+
+
+			if(height < windowHeight){
+				$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+			}
+
+			// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
+			$(window).resize(function(event){
+				var height = $('#howto').innerHeight();
+				var windowHeight = $(window).height();
+				var navHeight = $('nav.navbar').innerHeight();
+				var siblingHeight = $('#howto').nextAll().innerHeight();
+		
+		
+				if(height < windowHeight){
+					$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+				}
+			});
+	
+			$('nav.navbar a, .scrollTop').click(function(event){
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash (#)
+					var hash = this.hash;
+					
+					// Ensure no section has relevant class
+					$('section').removeClass("focus");
+
+					// Add class to target
+					$(hash).addClass("focus");
+
+					// Remove thy class after timeout
+					setTimeout(function(){
+						$(hash).removeClass("focus");
+					}, 2000);			
+			
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top - 69
+					}, 600, function(){
+						
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;				
+					});
+							
+					// Collapse Navbar for mobile view
+					$(".navbar-collapse").collapse('hide');			
+				}
+
+			});
+
+		$(window).scroll(function(){
+			var scrollPos = $('body').scrollTop();
+			if(scrollPos > 0){
+				$('.navbar').addClass('show-color');
+				$('.scrollTop').addClass('show-button');
+			} else{
+				$('.navbar').removeClass('show-color');
+				$('.scrollTop').removeClass('show-button');
+			}
+		
+		});
+	});
+
+			})
+		</script> 
+	</head>
+
+	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="100">
+
+		<!-- Navigation -->
+
+		<header>
+
+		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy"> <!-- mx-4 -->
+
+		    	<a class="nav-link nav_style" href="index.html" data-scroll="">Home</a>
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="index.html#portfolio">Portfolio</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="index.html#about">About</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
+<!-- 			  </li> -->
+
+			</nav>
+
+		</header>
+
+		<div class="container-fluid text-center">
+			<h1 class="indiv_proj_heading">LSA Honors website<h1>
+		</div>
+		<div class="container-fluid text-center">
+			<h2 class="indiv_proj_subheading">Needs &amp; usability assessment<h2>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-2">
+				</div>
+
+				<div class="col-sm-8">
+					<p class="indiv_proj_desc">LSA Honors is a program within the University of Michigan's College of Literature, Science, and the Arts.</p>
+
+					<p class="indiv_proj_desc">Staff members were overwhelmed with calls to the office and appointment requests from students asking for information that was presented on the website, and so the program's administrators reached out to collaborate on a project to identify ways to improve the site's usability for current students in the program.</p>
+
+				</div>
+
+				<div class="col-sm-1">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2 col-sm-2">
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">TIMELINE</p>
+					<p class="summary_text">Feb - Apr 2017 (12 weeks)</p>
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">MY ROLE</p>
+					<p class="summary_text">UX researcher</p>
+				</div>
+
+				<div class="col-sm-2 mobile_only">
+				</div>
+
+				<div class="col-sm-2 mobile_only">
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">SKILLS</p>
+					<p class="summary_text">Feature analysis</p>
+					<p class="summary_text">Interviews</p>
+					<p class="summary_text">Survey design</p>
+					<p class="summary_text">Heuristic analysis</p>
+					<p class="summary_text">Usability testing</p>
+					<p class="summary_text">UX report writing</p>
+					<p class="summary_text">Project management</p>
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">TEAM</p>
+					<p class="summary_text">Jatin Gupta</p>
+					<p class="summary_text">Kristen Mayer</p>
+					<p class="summary_text">Tongyun Shang</p>
+					<p class="summary_text">Shuyao Zhu</p>
+				</div>
+
+				<div class="col-md-2 col-sm-2">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid" style="margin-top:8%">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<img src="static/img/lsa_flow.png" class="indiv_proj_img">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">INTERACTION MAP</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">In order to understand current user flows through the LSA Honors site we created an interaction map to visualize the site's architecture.</p>
+					<p class="indiv_proj_text">This helped us to understand how information is currently organized on the site and to identify how information targeted toward current students fits within the site's overall information architecture.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4">
+				</div>
+
+				<figure class="col-md-4 text-center">
+    				<!--Large image-->
+    				<a href="static/img/622_interactionMap.png" data-size="1600x2349">
+        			<!-- Thumbnail-->
+        			<img src="static/img/622_interactionMap.png" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure> 
+
+				<div class="col-md-4">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">INTERVIEWS</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">We completed a series of stakeholder interviews to define project requirements and understand site and program administrators' goals for this project.</p>
+					<p class="indiv_proj_text">We also conducted user interviews with current LSA Honors students to understand how they use the site and how their information seeking behaviors change over the course of a semester and over their years in the program.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4 text-center">
+					<img src="static/img/622_interview01.jpeg" class="indiv_proj_img">
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="static/img/622_interview02.jpeg" class="indiv_proj_img">
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="static/img/622_interview00.jpeg" class="indiv_proj_img">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">After conducting our interviews, we visualized our key takeaways from the interviews by grouping statements from our conversations into facts, problems, behaviors, and needs/goals.</p>
+					<p class="indiv_proj_text"><b>For the website administrators,</b> their recent adoption of a new content management system (mandated by the LSA college) caused them to make changes to the site layout.</p>
+					<p class="indiv_proj_text"><strong>From the students' perspective</strong> we found that they mostly use the LSA Honors website to find course information and program requirements, and that they prefer to access the site on a desktop. Text-heavy pages make it difficult to find specific information, and students usually make appointments with an advisor when they can't find the information they are looking for.</p>
+					<p class="indiv_proj_text">Based on our interview findings we created a set of personas that represent our target population for this project.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<figure class="col-md-4 text-center">
+    				<!--Large image-->
+    				<a href="static/img/622_persona_joshMathews.jpg" data-size="1600x2349">
+        			<!-- Thumbnail-->
+        			<img src="static/img/622_persona_joshMathews.jpg" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure> 
+
+				<figure class="col-md-4 text-center">
+    				<!--Large image-->
+    				<a href="static/img/622_persona_melanieJones.jpg" data-size="1600x2349">
+        			<!-- Thumbnail-->
+        			<img src="static/img/622_persona_melanieJones.jpg" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure> 
+
+				<figure class="col-md-4 text-center">
+    				<!--Large image-->
+    				<a href="static/img/622_persona_tomAnderson.jpg" data-size="1600x2349">
+        			<!-- Thumbnail-->
+        			<img src="static/img/622_persona_tomAnderson.jpg" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure> 
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">COMPARATIVE ANALYSIS</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">We analyzed the websites of a series of similar organizations to understand how they present information to their users.</p>
+					<p class="indiv_proj_text">A few of the organizations included on-campus student programs housed in other departments, honors programs at other universities, and government organizations whose websites serve the purpose of providing users with information about programs and services.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4">
+				</div>
+
+				<figure class="col-md-4 text-center">
+    				<!--Large image-->
+    				<a href="static/img/622_comparativeAnalysis.png" data-size="1600x2349">
+        			<!-- Thumbnail-->
+        			<img src="static/img/622_comparativeAnalysis.png" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+
+					<p class="indiv_proj_text">We compared these websites based on the following criteria: <strong>presentation of information, site navigation, use of quick links, display of news and events, FAQ, and findability of contact information.</strong></p>
+					<p class="indiv_proj_text">Some of our findings included using images and other media which support the overall message of a page, in order to break up large chunks of text on a webpage and improve skimmability. We also found that using an FAQ page as a catch-all for common questions that do not fit into the content of any one page and are best answered directly is an effective way to connect users with the answers they may be seeking.</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4">
+				</div>
+
+				<figure class="col-md-4 text-center">
+    				<!--Large image-->
+    				<a href="static/img/622_comparativeAnalysis2.png" data-size="1600x2349">
+        			<!-- Thumbnail-->
+        			<img src="static/img/622_comparativeAnalysis2.png" class="img-fluid indiv_proj_img">
+    				</a>
+				</figure>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">SURVEY</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">We created and distributed a survey to all current students in order to obtain more information about the characteristics, behaviors, and attitudes of current students toward the LSA Honors website.</p>
+					<p class="indiv_proj_text">With 28 survey responses, we were able to determine with 95% confidence which pages were visited most frequently, the desire for more media elements on the site, and the high frequency of in-person help (either from LSA staff advisors or from other students in the program).</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">HEURISTIC EVALUATION</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">We evaluated the LSA Honors website based on a combination of Nielsen's heuristics and our own heurisitc of site accessibility, and we found that some of the most pressing issues are: <strong>inconsistent formatting of links; accessibility issues for images, headings, and menus; and inconsistent styling of page headings.</strong></p>
+					<p class="indiv_proj_text">We also suggest a broad, rather than deep, information architecture for site content areas like course requirments and information about currently offered LSA Honors courses.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">USABILITY TESTS</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">Based on our previous findings we created a series of tasks for a usability test that targeted the areas we found to be most problematic.</p>
+					<p class="indiv_proj_text">Our key findings include:</p>
+					<ul>
+						<li class="indiv_proj_text_listItem">Current students rarely use quick links to access site content</li>
+						<li class="indiv_proj_text_listItem">There are multiple paths to get to the appointment system</li>
+						<li class="indiv_proj_text_listItem">Navigation terminology is confusing for users</li>
+						<li class="indiv_proj_text_listItem">Skimmability of webpage content and information hierarchy could be improved</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">These findings led us to recommend <strong>a restructuring of the site's content and information architecture to better match student needs by changing the quick links on the homepage, remove duplicate paths to schedule an appointment, improve page title terminology so users better understand the content on each page, and split up large blocks of text to make information easier to find quickly.</strong></p>
+					<p class="indiv_proj_text"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4">
+				</div>
+
+				<div class="col-md-4 text-center">
+					<img src="static/img/622_usabilityTest.png" class="indiv_proj_img">
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">REFLECTION</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<h4 class="indiv_proj_sectionsubheading">Recruitment</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">We believe that participant recruitment created some bias in our results, as the students who participated in our studies were students that were regularly involved in LSA Honors programming and events, and were not representative of the program's students as a whole.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<h4 class="indiv_proj_sectionsubheading">Future steps</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">In this project we focused primarily on improving information-seeking behavior on the LSA Honors site. In the future, we could take steps to test navigation in other ways, like more observational ethnographic studies or card sorting. We could also test other aspects of the website, like measuring user sentiment instead of just task completion, and these findings could illuminate other strengths and new of improvement, as well as a new perspective on other ways to improve navigation.</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<footer>
+
+			<div class="container-fluid text-center footer_text">
+				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
+			</div>
+
+			<div class="container-fluid footer_icons text-center">
+
+				<a href="https://www.linkedin.com/in/marcy-held-837917b0/"><img class = "footer_logo" src="static/img/logo_linkedin.png" alt="Connect with Marcy on Linkedin">
+				</a>
+
+				<a href="https://www.instagram.com/marcyheld/"><img class = "footer_logo" src="static/img/logo_instagram.png" alt="Connect with Marcy on Instagram"></a>
+
+
+
+				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
+
+
+			</div>
+
+		</footer>
+
+	</body>
+
+</html>

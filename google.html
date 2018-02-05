@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Marcy Held</title>
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8="crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="static/css/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
+
+		<script type="text/javascript"> 
+			$(function () {
+    			$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+			});
+			//<![CDATA[ 
+			// window.onload=function(){ 
+			// $('nav a').on('click', function() {
+
+			// var scrollAnchor = $(this).attr('data-scroll'),
+			// scrollPoint = $('p[data-anchor="' + scrollAnchor + '"]').offset().top -28;
+
+			// $('body,html').animate({
+			// scrollTop: scrollPoint
+			// }, 500);
+
+			// return false;
+
+			// })
+
+
+			// $(window).scroll(function() {
+			// var windscroll = $(window).scrollTop();
+			// 	if (windscroll >= 100) {
+			// 		$('nav').addClass('fixed');
+			// 		$('.wrapper p').each(function(i) {
+			// 			if ($(window).width() < 768) {
+			// 				if ($(this).position().top <= windscroll - 1500) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+			// 			}
+
+			// 			else {
+			// 				if ($(this).position().top <= windscroll - 700) {
+			// 					$('nav a.active').removeClass('active');
+			// 					$('nav a').eq(i).addClass('active');
+			// 					}
+
+			// 				}
+						
+			// 		});
+
+			// } else {
+
+			// 	$('nav').removeClass('fixed');
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a:first').addClass('active');
+			// 	}
+
+
+			// }).scroll();} 
+			//]]> 
+
+			// ******************** 2ND ATTEMPT ********************************
+
+			// $('body').scrollspy({ target: '#nav_scrollspy' })
+			// $('[data-spy="scroll"]').each(function () {
+			// 	var $spy = $(this).scrollspy('refresh')
+			// })
+
+			// $('#nav_scollspy').on('activate.bs.scrollspy', function () {
+			// 	$('nav a.active').removeClass('active');
+			// 	$('nav a').eq(i).addClass('active');
+
+			// *************************** 3RD ATTEMPT ***************************
+			$(document).ready(function(){
+	
+			// Scrollspy initiation
+			$('body').scrollspy({ 
+			target: '#scroll-spy',
+			offset: 70
+			});
+
+			// On render, adjust body padding to ensure last Scroll target can reach top of screen
+			var height = $('#howto').innerHeight();
+			var windowHeight = $(window).height();
+			var navHeight = $('nav.navbar').innerHeight();
+			var siblingHeight = $('#howto').nextAll().innerHeight();
+
+
+			if(height < windowHeight){
+				$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+			}
+
+			// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
+			$(window).resize(function(event){
+				var height = $('#howto').innerHeight();
+				var windowHeight = $(window).height();
+				var navHeight = $('nav.navbar').innerHeight();
+				var siblingHeight = $('#howto').nextAll().innerHeight();
+		
+		
+				if(height < windowHeight){
+					$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
+				}
+			});
+	
+			$('nav.navbar a, .scrollTop').click(function(event){
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash (#)
+					var hash = this.hash;
+					
+					// Ensure no section has relevant class
+					$('section').removeClass("focus");
+
+					// Add class to target
+					$(hash).addClass("focus");
+
+					// Remove thy class after timeout
+					setTimeout(function(){
+						$(hash).removeClass("focus");
+					}, 2000);			
+			
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top - 69
+					}, 600, function(){
+						
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;				
+					});
+							
+					// Collapse Navbar for mobile view
+					$(".navbar-collapse").collapse('hide');			
+				}
+
+			});
+
+		$(window).scroll(function(){
+			var scrollPos = $('body').scrollTop();
+			if(scrollPos > 0){
+				$('.navbar').addClass('show-color');
+				$('.scrollTop').addClass('show-button');
+			} else{
+				$('.navbar').removeClass('show-color');
+				$('.scrollTop').removeClass('show-button');
+			}
+		
+		});
+	});
+
+			})
+		</script> 
+	</head>
+
+	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="100">
+
+		<!-- Navigation -->
+
+		<header>
+
+		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy"> <!-- mx-4 -->
+
+		    	<a class="nav-link nav_style" href="index.html" data-scroll="">Home</a>
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="index.html#portfolio">Portfolio</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="index.html#about">About</a>
+<!-- 			  </li> -->
+
+<!-- 			  <li class="nav-item"> -->
+			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
+<!-- 			  </li> -->
+
+			</nav>
+
+		</header>
+
+		<div class="container-fluid text-center">
+			<h1 class="indiv_proj_heading">A Summer at Google NYC<h1>
+		</div>
+		<div class="container-fluid text-center">
+			<h2 class="indiv_proj_subheading">Exploring design through UX writing<h2>
+		</div>
+
+		<div class="container-fluid text-center">
+			<div class="row">
+				<!-- <div class="col-md-1 desktop_only">
+				</div> -->
+
+				<figure class="col-xs-12 text-center proj_headerPhoto" style="margin-top:3%;">
+					<!--Large image-->
+					<a href="static/img/google_nycBalcony.JPG" data-size="1600x2349">
+	    			<!-- Thumbnail-->
+	    			<img src="static/img/google_nycBalcony.JPG" class="img-fluid">
+					</a>
+				</figure>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2 col-sm-2">
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">TIMELINE</p>
+					<p class="summary_text">May - Aug 2017 (14 weeks)</p>
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">MY ROLE</p>
+					<p class="summary_text">UX writer</p>
+				</div>
+
+				<div class="col-sm-2 mobile_only">
+				</div>
+
+				<div class="col-sm-2 mobile_only">
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">SKILLS</p>
+					<p class="summary_text">UI text</p>
+					<p class="summary_text">Content strategy</p>
+					<p class="summary_text">Style guides</p>
+					<p class="summary_text">Info architecture</p>
+					<p class="summary_text">UX research</p>
+				</div>
+
+				<div class="col-md-2 col-sm-4">
+					<p class="summary_heading">TEAM</p>
+					<p class="summary_text">UX writers</p>
+					<p class="summary_text">Interaction designers</p>
+					<p class="summary_text">UX researchers</p>
+					<p class="summary_text">Project managers</p>
+					<p class="summary_text">Developers</p>
+				</div>
+				
+				<div class="col-md-2 col-sm-2">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-12 text-center">	
+					<p class="indiv_proj_img_caption">This project is subject to a non-disclosure agreement</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid" style="margin-top:8%">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<img src="static/img/google_process.png" class="indiv_proj_img">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">PROJECT OVERVIEW</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">During my internship I tackled 2 main projects:</p>
+					<p class="indiv_proj_text"><b>User-facing text: </b>I created a series of timely content-based features for Google Search</p>
+					<p class="indiv_proj_text"><b>Google-facing text: </b>I created a comprehensive style guide that documents UI text rules for a major content area, so it can be expanded to other products across the company</p>
+					<p class="indiv_proj_text">I also assisted with usability testing, survey design, and other writing projects during my time as an intern. I spent time volunteering at an annual Google event and taught coding skills to young girls.</p>
+					<p class="indiv_proj_text">At the end of the summer I presented my work to the team of writers at Google Search and in an intern UX design showcase.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">DEFINE</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text"><b>Guiding questions: </b>Who is the target audience for this product / feature? Why are they motivated to use this product? What are they trying to understand or gain?</p>
+					<p class="indiv_proj_text">Through meetings with other Search writers and interaction designers, I learned that Google Search is a unique product because the audience is everyone, and that my goal was to craft interface text that is <b>trusted by content area experts and still accessible to people who may not know as much about the subject.</b></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">COLLECT</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text"><b>Guiding questions: </b>How do experts talk about this topic? What about novices? What are the technical terms, and what are the differences between a formal tone and an informal conversation?</p>
+					<p class="indiv_proj_text">I got to work on secondary research, covering subjects from what UI text has been written for similar products, and what language is used to describe this content area.</p>
+					<p class="indiv_proj_text">I consulted websites, television, radio programming, existing Google products, and content area experts to get a sense of the language used in this content area.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">DRAFT</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">The next step was to compose UI text that fits product specs and is appropriate for both expert and novice users.</p>
+					<p class="indiv_proj_text">I worked with designers to define text placement and character length, and I partnered with PMs and developers to plan for implementation by selecting variable names and determining which data we can access and present.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<img src="static/img/google_designBanner.png" class="indiv_proj_img" style="padding-top:5%;">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">REFINE</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">After completing a finalized draft, I consulted the writing team, PM, interaction designers, and developers for feedback.</p>
+					<p class="indiv_proj_text">I also sought feedback from translation experts to identify potential problem areas and edits to phrasing and word choice.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">DELIVER</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I presented my final work to the Search writing team and to the PM. I also presented my work in a Google NYC event that showcased projects from all UX design interns.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">DOCUMENT</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">I documented my process in a series of style guides that explain language, punctuation, and formatting choices.</p>
+					<p class="indiv_proj_text">These guides will be used internally by other Google product teams that want to incorporate information about this content area into their product.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<img src="static/img/google_images.png" class="indiv_proj_img" style="margin-top: 5%;">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">TAKEAWAYS</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_processHeading">WORDS AS BRAND STRATEGY</h3>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">"What is the brand identity that we are trying to convey?" or, in terms of UX writing, "What would our product say at a particular moment?"</p>
+					<p class="indiv_proj_text">Brand strategy should be embedded within all aspects of a product's design, but the product's voice (literally its personality, what it says, how it reacts to specific input) is an incredibly important piece that shapes user experience.</p>
+					<p class="indiv_proj_text">How would our product deliver good news (like a successful transaction) or bad news (like an error message)?</p>	
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_processHeading">WORDS SHAPE INTERACTIONS</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">During my 14 weeks as a Google design intern I began to understand UX and product design in a way that I never had before: <b>interactions as a conversation between a product and a user.</b></p>
+					<p class="indiv_proj_text">This metaphor of a conversation really helped me to refine my understanding of interaction design and user experience, because the language that a product uses determines how users interact with that product.</p>
+					<p class="indiv_proj_text">How informative are error messages? How many notifications are sent, and what information do those notifications contain? </p> 
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_processHeading">WORDS BUILD USER TRUST</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<p class="indiv_proj_text">When users understand how to use your product, and the words your product uses to communicate are seemlessly incorporated into all other aspects of the design, this builds confidence in your brand.</p>
+					<p class="indiv_proj_text">This comes from communicating highly technical information in an understandable way (empowering users to feel confident when they use your product) and incorporating the right amount of humor and delight.</p>
+					<p class="indiv_proj_text">And when users find delight in your product, this keeps them engaged.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<img src="static/img/google_noogler.JPG" class="indiv_proj_img_small">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10 text-center">	
+					<p class="indiv_proj_img_caption">Obligatory noogler pic :)</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-1">
+				</div>
+
+				<div class="col-md-10">
+					<p class="indiv_proj_text text-center">Thank you to everyone I've worked with at Google.</p>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<footer>
+
+			<div class="container-fluid text-center footer_text">
+				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
+			</div>
+
+			<div class="container-fluid footer_icons text-center">
+
+				<a href="https://www.linkedin.com/in/marcy-held-837917b0/"><img class = "footer_logo" src="static/img/logo_linkedin.png" alt="Connect with Marcy on Linkedin">
+				</a>
+
+				<a href="https://www.instagram.com/marcyheld/"><img class = "footer_logo" src="static/img/logo_instagram.png" alt="Connect with Marcy on Instagram"></a>
+
+
+
+				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
+
+
+			</div>
+
+		</footer>
+
+	</body>
+
+</html>
