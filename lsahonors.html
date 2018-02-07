@@ -5,11 +5,10 @@
 		<meta charset="utf-8">
 		<title>Marcy Held</title>
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8="crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" href="static/css/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="static/css/bootstrap.css">
+
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
@@ -18,177 +17,34 @@
 
 		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
 
-		<script type="text/javascript"> 
-			$(function () {
-    			$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-			});
-			//<![CDATA[ 
-			// window.onload=function(){ 
-			// $('nav a').on('click', function() {
+		<script>
+		    (function(h,o,t,j,a,r){
+		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		        h._hjSettings={hjid:772954,hjsv:6};
+		        a=o.getElementsByTagName('head')[0];
+		        r=o.createElement('script');r.async=1;
+		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		        a.appendChild(r);
+		    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
 
-			// var scrollAnchor = $(this).attr('data-scroll'),
-			// scrollPoint = $('p[data-anchor="' + scrollAnchor + '"]').offset().top -28;
-
-			// $('body,html').animate({
-			// scrollTop: scrollPoint
-			// }, 500);
-
-			// return false;
-
-			// })
-
-
-			// $(window).scroll(function() {
-			// var windscroll = $(window).scrollTop();
-			// 	if (windscroll >= 100) {
-			// 		$('nav').addClass('fixed');
-			// 		$('.wrapper p').each(function(i) {
-			// 			if ($(window).width() < 768) {
-			// 				if ($(this).position().top <= windscroll - 1500) {
-			// 					$('nav a.active').removeClass('active');
-			// 					$('nav a').eq(i).addClass('active');
-			// 					}
-			// 			}
-
-			// 			else {
-			// 				if ($(this).position().top <= windscroll - 700) {
-			// 					$('nav a.active').removeClass('active');
-			// 					$('nav a').eq(i).addClass('active');
-			// 					}
-
-			// 				}
-						
-			// 		});
-
-			// } else {
-
-			// 	$('nav').removeClass('fixed');
-			// 	$('nav a.active').removeClass('active');
-			// 	$('nav a:first').addClass('active');
-			// 	}
-
-
-			// }).scroll();} 
-			//]]> 
-
-			// ******************** 2ND ATTEMPT ********************************
-
-			// $('body').scrollspy({ target: '#nav_scrollspy' })
-			// $('[data-spy="scroll"]').each(function () {
-			// 	var $spy = $(this).scrollspy('refresh')
-			// })
-
-			// $('#nav_scollspy').on('activate.bs.scrollspy', function () {
-			// 	$('nav a.active').removeClass('active');
-			// 	$('nav a').eq(i).addClass('active');
-
-			// *************************** 3RD ATTEMPT ***************************
-			$(document).ready(function(){
-	
-			// Scrollspy initiation
-			$('body').scrollspy({ 
-			target: '#scroll-spy',
-			offset: 70
-			});
-
-			// On render, adjust body padding to ensure last Scroll target can reach top of screen
-			var height = $('#howto').innerHeight();
-			var windowHeight = $(window).height();
-			var navHeight = $('nav.navbar').innerHeight();
-			var siblingHeight = $('#howto').nextAll().innerHeight();
-
-
-			if(height < windowHeight){
-				$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
-			}
-
-			// On window resize, adjust body padding to ensure last Scroll target can reach top of screen
-			$(window).resize(function(event){
-				var height = $('#howto').innerHeight();
-				var windowHeight = $(window).height();
-				var navHeight = $('nav.navbar').innerHeight();
-				var siblingHeight = $('#howto').nextAll().innerHeight();
-		
-		
-				if(height < windowHeight){
-					$('body').css("padding-bottom", windowHeight-navHeight-height-siblingHeight + "px");
-				}
-			});
-	
-			$('nav.navbar a, .scrollTop').click(function(event){
-				// Make sure this.hash has a value before overriding default behavior
-				if (this.hash !== "") {
-					// Prevent default anchor click behavior
-					event.preventDefault();
-
-					// Store hash (#)
-					var hash = this.hash;
-					
-					// Ensure no section has relevant class
-					$('section').removeClass("focus");
-
-					// Add class to target
-					$(hash).addClass("focus");
-
-					// Remove thy class after timeout
-					setTimeout(function(){
-						$(hash).removeClass("focus");
-					}, 2000);			
-			
-    // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
-					$('html, body').animate({
-						scrollTop: $(hash).offset().top - 69
-					}, 600, function(){
-						
-						// Add hash (#) to URL when done scrolling (default click behavior)
-						window.location.hash = hash;				
-					});
-							
-					// Collapse Navbar for mobile view
-					$(".navbar-collapse").collapse('hide');			
-				}
-
-			});
-
-		$(window).scroll(function(){
-			var scrollPos = $('body').scrollTop();
-			if(scrollPos > 0){
-				$('.navbar').addClass('show-color');
-				$('.scrollTop').addClass('show-button');
-			} else{
-				$('.navbar').removeClass('show-color');
-				$('.scrollTop').removeClass('show-button');
-			}
-		
-		});
-	});
-
-			})
-		</script> 
 	</head>
 
-	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="100">
+	<body>
 
 		<!-- Navigation -->
 
 		<header>
 
-		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy"> <!-- mx-4 -->
+		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy">
 
 		    	<a class="nav-link nav_style" href="index.html" data-scroll="">Home</a>
 
-<!-- 			  <li class="nav-item"> -->
 			    <a class="nav-link nav_style" href="index.html#portfolio">Portfolio</a>
-<!-- 			  </li> -->
 
-<!-- 			  <li class="nav-item"> -->
 			    <a class="nav-link nav_style" href="index.html#about">About</a>
-<!-- 			  </li> -->
 
-<!-- 			  <li class="nav-item"> -->
 			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
-<!-- 			  </li> -->
 
 			</nav>
 
@@ -307,11 +163,11 @@
 				</div>
 
 				<figure class="col-md-4 text-center">
-    				<!--Large image-->
+
     				<a href="static/img/622_interactionMap.png" data-size="1600x2349">
-        			<!-- Thumbnail-->
         			<img src="static/img/622_interactionMap.png" class="img-fluid indiv_proj_img">
     				</a>
+    				
 				</figure> 
 
 				<div class="col-md-4">
