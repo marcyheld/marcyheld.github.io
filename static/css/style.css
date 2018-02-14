@@ -1,115 +1,93 @@
-@import url('https://fonts.googleapis.com/css?family=Lato: 300, 400, 700');
-@import url('https://fonts.googleapis.com/css?family=Lora: 300, 400, 700');
+@import url('https://fonts.googleapis.com/css?family=Roboto: 100, 200, 400, 700, 800');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono: 300, 400, 700');
 
-body {
-	position: relative;
 
-	background-color: #F0F0F0;
-}
+#logo {
+	width: 150px;
+	height: auto;
 
-/* NAV STYLING */
-
-/*
-FOR JOSUE AND NEIL'S WAY OF SCROLLING
-nav {
-	z-index: 100;
-}*/
-
-.homepage_topquote {
-	font-family: "Lora" !important;
-
-	font-size: 25px;
-
-	margin-left: 8%;
-	margin-right: 5%;
-
-}
-
-.hompage_meimg {
-	display:none;
-}
-
-.wrapper {
-  width: 400px;
-  margin: 0 auto;
-  position: relative;
-  padding: 28px 0 0 0;
+	margin-top: 4%;
+	/*margin-left: -18%;*/
 }
 
 .nav_style {
-	color: black !important;
 
-	font-family: "Lato" !important;
-	font-size: 12pt !important;
+	/*margin-top: 5px;*/
+
+	font-family: "Roboto" !important;
+	font-size: 14pt !important;
+
+	padding-top: 5%;
+
+	color: #99a3b2;
 }
 
-nav {
+.nav_style_selected {
+
+	/*margin-top: 5px;*/
+
+	font-family: "Roboto" !important;
+	font-size: 14pt !important;
+
+	padding-top: 5%;
+
+	color: #000000 !important;
+}
+
+/*nav {
 	top:0px;
-}
-
-nav a:hover{
-	border-bottom-style: solid;
-	border-bottom-width: 3px;
-	border-bottom-color: #FF2751;
-
-}
-
-/*nav a.active {
-	font-weight: 700;
-
 }*/
 
-.active {
-	color: yellow;
-}
-
-.fixed {
-  position: fixed;
-  top: 0;
-}
-
-.nav_class {
-	padding-top: 1%;
-
-	background-color: rgba(240, 240, 240, 1);
-
-	width:100%;
-}
-
-/*.nav_selected {
-	border-bottom-style: solid;
+header a:hover{
+/*	border-bottom-style: solid;
 	border-bottom-width: 3px;
-	border-bottom-color: #FF2751;
+	border-bottom-color: #FF2751;*/
+	color: #FF2751 !important;
+
+}
+
+/*.nav_class {
+	padding-top: 3%;
+	width:100%;
 }*/
 
 /* MARCY HELD - INTERACTION DESIGNER */
 
-.homepage_heading {
-	font-family: "Lato" !important;
+.index_heading {
+	font-family: "Roboto" !important;
 
-	font-size: 65px;
-	/*letter-spacing: .1em;*/
-
-	text-align: center;
+	font-size: 55px;
+	font-weight: bold;
 
 	padding-top: 10%;
-	padding-bottom: -2%;
-}
-
-.homepage_subheading {
-	font-family: "Lato" !important;
-
-	font-size: 25px;
-	font-weight: 300;
 
 	text-align: center;
+}
 
-	margin-bottom: 25%;
+.index_headingB {
+	font-family: "Roboto" !important;
+
+	font-size: 20px;
+	font-weight: bold;
+
+	margin-top: -4%;
+
+	text-align: center;
+}
+
+.index_headingC {
+	font-family: "Roboto" !important;
+
+	font-size: 18px;
+	font-weight: 300;
+
+	margin-top: 2%;
+	margin-bottom: 6%;
 }
 
 /* PORTFOLIO IMAGES + LINKS */
 
-.portfolio_heading {
+/*.portfolio_heading {
 	margin-top: 30%;
 
 	padding-left: 32%;
@@ -125,69 +103,85 @@ nav a:hover{
 	
 	text-align: center;
 
-}
+}*/
 
-#portfolio {
+/*#portfolio {
     border-top: 70px solid transparent;
-    /*margin-top: -50px;*/
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     background-clip: padding-box;
-}
+}*/
 
-#about {
+/*#about {
     border-top: 70px solid transparent;
-    /*margin-top: -50px;*/
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     background-clip: padding-box;
-}
+}*/
 
-.homepage_projectlink {
-	width: 75%;
 
-	margin-top: 5%;
+.index_proj {
+	width: 65%;
+
+	/*margin-top: 5%;*/
 
 	padding-bottom: 4%;
-
-	/*padding-left: 15%;*/
 
 	transition: .5s ease;
 	backface-visibility: hidden;
 }
 
-.proj_text {
-	font-family: "Lato" !important;
+.image_container:hover .index_proj {
+  opacity: 0.5;
+}
 
-	font-size: 20px !important;
+.proj_heading {
+	font-family: "Roboto Mono" !important;
+
+	font-size: 14px !important;
 
 	color: black;
-	font-size: 16px;
-	/*padding: 16px 32px;*/
+
+	margin-top: 15%;
 }
 
-.middle {
-	transition: .5s ease;
-	opacity: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	text-align: center;
+.proj_subheading {
+	font-family: "Roboto" !important;
+
+	font-size: 12px !important;
+	font-style: italic;
+
+	color: black;
+
+	margin-top: -2%;
+	margin-bottom: 1%;
 }
 
-.image_container:hover .homepage_projectlink {
-  opacity: 0.2;
+.proj_headingB {
+	font-family: "Roboto Mono" !important;
+
+	font-size: 14px !important;
+
+	color: black;
+
+	margin-top: 15%;
 }
 
-.image_container:hover .middle {
-  opacity: 1;
+.proj_subheadingB {
+	font-family: "Roboto" !important;
+
+	font-size: 12px !important;
+	font-style: italic;
+
+	color: black;
+
+	margin-top: -2%;
+	margin-bottom: 1%;
 }
 
 /* HOMEPAGE ABOUT + SKILLS */
 
-.about_container {
+/*.about_container {
 	
 	margin-top: 6%;
 
@@ -212,13 +206,14 @@ nav a:hover{
 
 .about_img {
 
-	width: 100%;
+	width: 50%;
+	margin-left: 10%;
 	
-}
+}*/
 
-.bio_textA {
+/*.bio_textA {
 
-	font-family: "Lora";
+	font-family: "Lato";
 	font-size: 16px;
 
 	padding-top: 5%;
@@ -226,14 +221,29 @@ nav a:hover{
 
 .bio_textB {
 
-	font-family: "Lora";
+	font-family: "Lato";
 	font-size: 16px;
+
+}*/
+
+.bio_currentlyHeader {
+	margin-top: 2%;
+	font-family: "Lato";
+	font-size: 28px;
+	/*font-style: italic;
+	font-weight: bold;*/
+	margin-bottom: -2%;
 
 }
 
+.bio_text_currentImg {
+	width: 65%;
+}
+
 .bio_text_currentList {
-	font-family: "Lora";
+	font-family: "Lato";
 	font-size: 16px;
+	padding-top: 4%;
 
 }
 
@@ -242,10 +252,9 @@ nav a:hover{
 }
 
 .skills_heading {
+	margin-top: 5%;
 	font-family: "Lato";
 	font-size: 28px;
-	/*font-weight: bold;*/
-	/*font-style: italic;*/
 
 	border-bottom: solid;
 }
@@ -292,23 +301,25 @@ nav a:hover{
 /* FOOTER STYLING */
 
 .footer_text {
-	margin-top: 5%;
+	/*margin-top: 5%;*/
 	padding-top: 2%;
 
-	background-color: #bababa;
+	/*background-color: #bababa;*/
 	padding-bottom: 1%;
 
-	font-family: "Lato";
-	font-size: 18px;
+	font-family: "Roboto Mono";
+	font-size: 14px;
+
+	letter-spacing: .2em;
 }
 
 .footer_icons {
-	padding-bottom: 2%;
+	margin-top: 7%;
 
 	padding-left: 30%;
 	padding-right: 30%;
 
-	background-color: #bababa;
+	/*background-color: #bababa;*/
 
 }
 
@@ -326,27 +337,31 @@ nav a:hover{
 
 .summary_heading {
 	padding-top: 3%;
-	font-family: "Lato";
+	font-family: "Roboto";
 	font-size: 18px;
 	font-weight: bold;
 	text-decoration: underline;
 
+	text-align: center;
+
 }
 
 .summary_text {
-	font-family: "Lato";
+	font-family: "Roboto";
 	font-size: 14px;
 
 	/*margin-top: 0%;*/
 	margin-top: -3%;
 
-	font-weight: lighter;
+	font-weight: 100;
+
+	text-align: center;
 
 }
 
 .indiv_proj_heading {
-	font-family: "Lato";
-	font-size: 40px;
+	font-family: "Roboto";
+	font-size: 60px;
 
 	font-weight: bold;
 
@@ -354,14 +369,16 @@ nav a:hover{
 }
 
 .indiv_proj_subheading {
-	font-family: "Lato";
-	font-size: 25px;
+	font-family: "Roboto";
+	font-size: 20px;
 
 	margin-top: 1%;
+	margin-bottom: 15%;
 }
 
 .indiv_proj_desc {
-	font-family: "Lora";
+	font-family: "Roboto";
+	font-weight: 100;
 	font-size: 14px;
 	margin-top: 2%;
 
@@ -369,7 +386,7 @@ nav a:hover{
 }
 
 .indiv_proj_sectionheading {
-	font-family: "Lato";
+	font-family: "Roboto";
 	font-size: 30px;
 	margin-top: 10%;
 	font-weight: bolder;
@@ -387,8 +404,16 @@ nav a:hover{
 
 }
 
+.indiv_proj_summary {
+	margin-top: -10%;
+	margin-bottom: 5%;
+	width: 100%;
+
+}
+
 .indiv_proj_text {
-	font-family: "Lora";
+	font-family: "Roboto";
+	font-weight: 200;
 	font-size: 16px;
 	margin-top: 2%;
 
@@ -399,7 +424,8 @@ nav a:hover{
 }
 
 .indiv_proj_text_listItem {
-	font-family: "Lora";
+	font-family: "Roboto";
+	font-weight: 200;
 	font-size: 16px;
 
 	margin-left: 5%;
@@ -420,7 +446,7 @@ nav a:hover{
 }
 
 .indiv_proj_img_caption {
-	font-family: "Lato";
+	font-family: "Roboto";
 	font-size: 12px;
 
 	margin-top: 1%;
@@ -429,7 +455,7 @@ nav a:hover{
 
 .indiv_proj_processHeading {
 	padding-top: 3%;
-	font-family: "Lato";
+	font-family: "Roboto";
 	font-size: 18px;
 	font-weight: bold;
 	text-decoration: underline;
@@ -448,7 +474,156 @@ nav a:hover{
 	width: 100% !important;
 }
 
+.about_topquote {
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 12px;
+	margin-top: 2%;
+
+	padding-left: 5%;
+	/*padding-right: 3%;*/
+	/*text-align: justify;*/
+	/*font-weight: lighter;*/
+
+}
+
+.about_img {
+
+	width: 50%;
+	margin-top: 5%;
+	margin-left: 15%;
+	
+}
+
+.about_text_container {
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.about_text {
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 12px;
+	margin-top: 2%;
+
+	padding-left: 5%;
+	/*padding-right: 3%;*/
+	/*text-align: justify;*/
+	/*font-weight: lighter;*/
+
+}
+
+.about_currentList {
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 12px;
+	margin-top: 2%;
+
+	padding-left: 15%;
+
+	margin-right: 20%;
+	/*padding-right: 3%;*/
+	/*text-align: justify;*/
+	/*font-weight: lighter;*/
+
+}
+
+
 @media only screen and (min-width: 768px) {
+
+.nav_style {
+	padding-top: 0%;
+
+	font-size: 10pt !important;
+
+}
+
+.nav_style_selected {
+	padding-top: 0%;
+
+	font-size: 10pt !important;
+}
+
+.index_heading {
+	font-family: "Roboto" !important;
+
+	font-size: 55px;
+	font-weight: bold;
+
+	padding-top: 5%;
+
+	text-align: center;
+}
+
+.index_headingB {
+	font-family: "Roboto" !important;
+
+	font-size: 20px;
+	font-weight: bold;
+
+	margin-top: -1%;
+
+	text-align: center;
+}
+
+.index_headingC {
+	font-family: "Roboto" !important;
+
+	font-size: 18px;
+	font-weight: 300;
+
+	margin-top: -1%;
+	margin-bottom: 6%;
+}
+
+.index_proj {
+	width: 95%;
+}
+
+.proj_heading {
+	font-family: "Roboto Mono" !important;
+
+	font-size: 14px !important;
+
+	color: black;
+
+	margin-top: 15%;
+}
+
+.proj_subheading {
+	font-family: "Roboto" !important;
+
+	font-size: 12px !important;
+	font-style: italic;
+
+	color: black;
+
+	margin-top: -2%;
+	margin-bottom: -2%;
+}
+
+.proj_headingB {
+	font-family: "Roboto Mono" !important;
+
+	font-size: 14px !important;
+
+	color: black;
+
+	margin-top: 20%;
+}
+
+.proj_subheadingB {
+	font-family: "Roboto" !important;
+
+	font-size: 12px !important;
+	font-style: italic;
+
+	color: black;
+
+	margin-top: -4%;
+	margin-bottom: -2%;
+}
 
 .homepage_topquote {
 
@@ -470,48 +645,112 @@ margin-right: 0%;
 }
 
 
-	.portfolio_heading {
-		margin-top: 30%;
+.portfolio_heading {
+	margin-top: 30%;
 }
 
-	.homepage_projectlink {
-		width: 95%;
+.index_proj {
+	width: 85%;
 
-		/*transition: .5s ease;
-		backface-visibility: hidden;*/
-	}
+	margin-top: 5%;
 
-	.skills_first_item {
-		font-family: "Lato";
-		font-size: 14px;
+	padding-bottom: 4%;
 
-		margin-top: 4%;
-		margin-bottom: -1%;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
 
-	}
+.proj_subheading {
+
+	margin-top: -4%;
+}
+
+/*.homepage_projectlink {
+	width: 65%;
+
+	transition: .5s ease;
+	backface-visibility: hidden;
+}*/
+
+.skills_first_item {
+	font-family: "Lato";
+	font-size: 14px;
+
+	margin-top: 4%;
+	margin-bottom: -1%;
+
+}
 
 
-	.about_img {
+.about_img {
 
-		width: 100%;
-	}
+	width: 50%;
+	margin-top: 12%;
+	margin-left: 35%;
+	
+}
 
-	.bio_textA {
+.about_text_container {
+	margin-top: 12%;
+	margin-left: -15%;
+	margin-right: 20%;
+}
 
-		padding-top: 0%;
+.about_text {
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 12px;
+	margin-top: 2%;
 
-	}
+	padding-left: 5%;
+	/*padding-right: 3%;*/
+	/*text-align: justify;*/
+	/*font-weight: lighter;*/
+
+}
+
+.about_currentList {
+	font-family: "Roboto";
+	font-weight: 200;
+	font-size: 12px;
+	margin-top: 2%;
+
+	padding-left: 15%;
+
+	margin-right: 20%;
+	/*padding-right: 3%;*/
+	/*text-align: justify;*/
+	/*font-weight: lighter;*/
+
+}
+
+.bio_textA {
+
+	padding-top: 0%;
+
+}
+
+.bio_currentlyHeader {
+	margin-top: 2%;
+	font-family: "Lato";
+	font-size: 28px;
+
+}
 
 .indiv_proj_heading {
 
 	margin-top: 8%;
 }
 
+.indiv_proj_subheading {
+	margin-bottom: 0%;
+}
+
 .summary_heading {
-	padding-top: 30%;
-	font-family: "Lato";
+	padding-top: 50%;
+	font-family: "Roboto";
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: 800;
 	text-decoration: underline;
 
 }
@@ -521,12 +760,18 @@ margin-right: 0%;
 }
 
 .summary_text {
-	font-family: "Lato";
+	font-family: "Roboto";
 	font-size: 14px;
 
 	margin-top: -5%;
 
-	font-weight: lighter;
+	font-weight: 100;
+
+}
+
+.indiv_proj_summary {
+	margin-top: -7%;
+	width: 95%;
 
 }
 
@@ -547,7 +792,7 @@ margin-right: 0%;
 }
 
 .indiv_proj_img {
-	width: 95%;
+	width: 70%;
 }
 
 }

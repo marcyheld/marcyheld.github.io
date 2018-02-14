@@ -6,16 +6,24 @@
 		<title>Marcy Held</title>
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 
+		<!-- BOOTSTRAP CSS --> 
 		<link rel="stylesheet" href="static/css/bootstrap.min.css">
 		<link rel="stylesheet" href="static/css/bootstrap.css">
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+		<!-- FONTS --> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 
+		<!-- MY CSS --> 
 		<link rel="stylesheet" type="text/css" href="static/css/style.css">
 
+		<!-- FAVICON --> 
 		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
+
+		<!-- JQUERY -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113987348-1"></script>
@@ -42,19 +50,31 @@
 	<body data-spy="scroll" data-target="#nav_scrollspy" data-offset="100">
 
 		<!-- Navigation -->
-
 		<header>
 
-		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy">
+		    <nav class="navbar navbar-toggleable-md navbar-expand-md navbar-light">
 
-		    	<a class="nav-link nav_style" href="index.html" data-scroll="">Home</a>
+				<div class="navbar-header navbar-left ml-md-5">
+						<a href="index.html" class="navbar-brand"><img src="static/img/mh_logo.png" id="logo"></a>
+				</div>
 
-			    <a class="nav-link nav_style" href="index.html#portfolio">Portfolio</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
+					<img src="static/img/menu.png" style="width:40px; height:auto;">
+				</button>
 
-			    <a class="nav-link nav_style" href="index.html#about">About</a>
-
-			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
-
+				<div class="collapse navbar-collapse navbar-right justify-content-end mr-md-5" id="navbarToggler">
+					<ul class="nav navbar-nav nav-list text-center my-lg-0"> <!-- replace text-center with my-2 for left-aligned dropdown-->
+						<li class="nav-item">
+							<a class="nav-link nav_style_selected" href="index.html">PROJECTS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav_style " href="about.html">ABOUT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">RESUME</a>
+						</li>
+					</ul>
+				</div>
 			</nav>
 
 		</header>
@@ -66,18 +86,18 @@
 			<h2 class="indiv_proj_subheading">Increasing civic engagement through access to information about local politics<h2>
 		</div>
 
-		<div class="container-fluid text-center">
+		<!-- <div class="container-fluid text-center">
 			<div class="row">
 
 				<figure class="col-xs-12 text-center google_headerPhoto" style="margin-top:3%;">
-					<!--Large image-->
+					Large image
 					<a href="static/img/localvote_header.png" data-size="1600x2349">
-	    			<!-- Thumbnail-->
+	    			Thumbnail
 	    			<img src="static/img/localvote_header.png" class="img-fluid">
 					</a>
 				</figure>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="container-fluid">
 			<div class="row">
@@ -91,7 +111,7 @@
 
 				<div class="col-md-2 col-sm-6">
 					<p class="summary_heading">MY ROLE</p>
-					<p class="summary_text">UX designer</p>
+					<p class="summary_text">UI + UX designer</p>
 				</div>
 
 				<div class="col-md-2 col-sm-6">
@@ -121,7 +141,7 @@
 				</div>
 
 				<div class="col-md-10 text-center">	
-					<img src="static/img/localvote_process.png" class="indiv_proj_img">
+					<img src="static/img/localvote_process.png" class="indiv_proj_summary">
 				</div>
 			</div>
 		</div>
@@ -613,12 +633,20 @@
 			</div>
 		</div>
 
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-8">
+				</div>
+
+				<div class="col-md-4">
+					<p class="indiv_proj_text"> <a href="lsahonors.html">LSA Honors</a> / <a href="google.html">Summer @ Google</a> </p>
+				</div>
+			</div>
+		</div>
+
 
 		<footer>
-
-			<div class="container-fluid text-center footer_text">
-				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
-			</div>
 
 			<div class="container-fluid footer_icons text-center">
 
@@ -631,8 +659,19 @@
 
 				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
 
-
 			</div>
+
+			<div class="container-fluid text-center footer_text">
+				<p>MHELD@UMICH.EDU</p>
+			</div>
+
+			<!-- LIGHTBOX SCRIPT -->
+			<script>
+				$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            	});
+			</script>
 
 		</footer>
 

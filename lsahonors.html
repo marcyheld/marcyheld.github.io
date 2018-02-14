@@ -6,16 +6,24 @@
 		<title>Marcy Held</title>
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 
+		<!-- BOOTSTRAP CSS --> 
 		<link rel="stylesheet" href="static/css/bootstrap.min.css">
 		<link rel="stylesheet" href="static/css/bootstrap.css">
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+		<!-- FONTS --> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 
+		<!-- MY CSS --> 
 		<link rel="stylesheet" type="text/css" href="static/css/style.css">
 
+		<!-- FAVICON --> 
 		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
+
+		<!-- JQUERY -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113987348-1"></script>
@@ -36,8 +44,7 @@
 		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
 		        a.appendChild(r);
 		    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-		</script>
-
+		</script> 
 	</head>
 
 	<body>
@@ -46,16 +53,29 @@
 
 		<header>
 
-		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item" id="nav_scrollspy">
+		    <nav class="navbar navbar-toggleable-md navbar-expand-md navbar-light">
 
-		    	<a class="nav-link nav_style" href="index.html" data-scroll="">Home</a>
+				<div class="navbar-header navbar-left ml-md-5">
+						<a href="index.html" class="navbar-brand"><img src="static/img/mh_logo.png" id="logo"></a>
+				</div>
 
-			    <a class="nav-link nav_style" href="index.html#portfolio">Portfolio</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
+					<img src="static/img/menu.png" style="width:40px; height:auto;">
+				</button>
 
-			    <a class="nav-link nav_style" href="index.html#about">About</a>
-
-			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
-
+				<div class="collapse navbar-collapse navbar-right justify-content-end mr-md-5" id="navbarToggler">
+					<ul class="nav navbar-nav nav-list text-center my-lg-0"> <!-- replace text-center with my-2 for left-aligned dropdown-->
+						<li class="nav-item">
+							<a class="nav-link nav_style_selected" href="index.html">PROJECTS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav_style " href="about.html">ABOUT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">RESUME</a>
+						</li>
+					</ul>
+				</div>
 			</nav>
 
 		</header>
@@ -65,24 +85,6 @@
 		</div>
 		<div class="container-fluid text-center">
 			<h2 class="indiv_proj_subheading">Needs &amp; usability assessment<h2>
-		</div>
-
-		<div class="container-fluid">
-			<div class="row">
-
-				<div class="col-sm-2">
-				</div>
-
-				<div class="col-sm-8">
-					<p class="indiv_proj_desc">LSA Honors is a program within the University of Michigan's College of Literature, Science, and the Arts.</p>
-
-					<p class="indiv_proj_desc">Staff members were overwhelmed with calls to the office and appointment requests from students asking for information that was presented on the website, and so the program's administrators reached out to collaborate on a project to identify ways to improve the site's usability for current students in the program.</p>
-
-				</div>
-
-				<div class="col-sm-1">
-				</div>
-			</div>
 		</div>
 
 		<div class="container-fluid">
@@ -133,11 +135,40 @@
 
 		<div class="container-fluid" style="margin-top:8%">
 			<div class="row">
-				<div class="col-md-1">
+				<div class="col-md-2">
 				</div>
 
-				<div class="col-md-10 text-center">	
-					<img src="static/img/lsa_flow.png" class="indiv_proj_img">
+				<div class="col-md-8 text-center">	
+					<img src="static/img/lsa_flow.png" class="indiv_proj_summary">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+
+				<div class="col-md-8">
+					<h3 class="indiv_proj_sectionheading">ABOUT THE CLIENT</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-sm-2">
+				</div>
+
+				<div class="col-sm-8">
+					<p class="indiv_proj_text">LSA Honors is a program within the University of Michigan's College of Literature, Science, and the Arts.</p>
+
+					<p class="indiv_proj_text">Staff members were overwhelmed with calls to the office and appointment requests from students asking for information that was presented on the website, and so the program's administrators reached out to collaborate on a project to identify ways to improve the site's usability for current students in the program.</p>
+
+				</div>
+
+				<div class="col-sm-1">
 				</div>
 			</div>
 		</div>
@@ -238,10 +269,14 @@
 			</div>
 		</div>
 
+
 		<div class="container-fluid">
 			<div class="row">
 
-				<figure class="col-md-4 text-center">
+				<div class="col-md-2 text-center">
+				</div>
+
+				<figure class="col-md-8 text-center">
     				<!--Large image-->
     				<a href="static/img/622_persona_joshMathews.jpg" data-size="1600x2349">
         			<!-- Thumbnail-->
@@ -249,21 +284,48 @@
     				</a>
 				</figure> 
 
-				<figure class="col-md-4 text-center">
+				<div class="col-md-2 text-center">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<figure class="col-md-8 text-center">
     				<!--Large image-->
     				<a href="static/img/622_persona_melanieJones.jpg" data-size="1600x2349">
         			<!-- Thumbnail-->
         			<img src="static/img/622_persona_melanieJones.jpg" class="img-fluid indiv_proj_img">
     				</a>
-				</figure> 
+				</figure>
 
-				<figure class="col-md-4 text-center">
+				<div class="col-md-2 text-center">
+				</div> 
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-2 text-center">
+				</div>
+
+				<figure class="col-md-8 text-center">
     				<!--Large image-->
     				<a href="static/img/622_persona_tomAnderson.jpg" data-size="1600x2349">
         			<!-- Thumbnail-->
         			<img src="static/img/622_persona_tomAnderson.jpg" class="img-fluid indiv_proj_img">
     				</a>
 				</figure> 
+
+				<div class="col-md-2 text-center">
+				</div>
 
 			</div>
 		</div>
@@ -293,10 +355,10 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-md-4">
+				<div class="col-md-2">
 				</div>
 
-				<figure class="col-md-4 text-center">
+				<figure class="col-md-8 text-center">
     				<!--Large image-->
     				<a href="static/img/622_comparativeAnalysis.png" data-size="1600x2349">
         			<!-- Thumbnail-->
@@ -330,10 +392,10 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-md-4">
+				<div class="col-md-2">
 				</div>
 
-				<figure class="col-md-4 text-center">
+				<figure class="col-md-8 text-center">
     				<!--Large image-->
     				<a href="static/img/622_comparativeAnalysis2.png" data-size="1600x2349">
         			<!-- Thumbnail-->
@@ -434,10 +496,10 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-md-4">
+				<div class="col-md-2">
 				</div>
 
-				<div class="col-md-4 text-center">
+				<div class="col-md-8 text-center">
 					<img src="static/img/622_usabilityTest.png" class="indiv_proj_img">
 				</div>
 
@@ -497,13 +559,20 @@
 			</div>
 		</div>
 
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-8">
+				</div>
+
+				<div class="col-md-4">
+					<p class="indiv_proj_text"> <a href="google.html">Summer @ Google</a> / <a href="localvote.html">Local Vote</a> </p>
+				</div>
+			</div>
+		</div>
 
 
 		<footer>
-
-			<div class="container-fluid text-center footer_text">
-				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
-			</div>
 
 			<div class="container-fluid footer_icons text-center">
 
@@ -516,8 +585,19 @@
 
 				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
 
-
 			</div>
+
+			<div class="container-fluid text-center footer_text">
+				<p>MHELD@UMICH.EDU</p>
+			</div>
+
+			<!-- LIGHTBOX SCRIPT -->
+			<script>
+				$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            	});
+			</script>
 
 		</footer>
 

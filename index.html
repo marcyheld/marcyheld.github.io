@@ -6,16 +6,19 @@
 		<title>Marcy Held</title>
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="static/css/bootstrap.min.css">
 		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:light">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:light">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 
 		<link rel="stylesheet" type="text/css" href="static/css/style.css">
 
 		<link rel="icon" type="image/png" href="static/img/waving.png" sizes="16x16">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113987348-1"></script>
@@ -45,87 +48,122 @@
 		<!-- Navigation -->
 		<header>
 
-		    <nav class="nav navbar-right justify-content-end fixed-top nav_class pr-5 nav-item">
+			<nav class="navbar navbar-toggleable-md navbar-expand-md navbar-light">
 
-		    	<a class="nav-link nav_style" href="" data-scroll="">Home</a>
+				<div class="navbar-header navbar-left ml-md-5">
+						<a href="index.html" class="navbar-brand"><img src="static/img/mh_logo.png" id="logo"></a>
+				</div>
 
-			    <a class="nav-link nav_style" href="#portfolio" data-scroll="portfolio">Portfolio</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
+					<img src="static/img/menu.png" style="width:40px; height:auto;">
+				</button>
 
-			    <a class="nav-link nav_style" href="#about" data-scroll="about">About</a>
-
-			    <a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">Resume</a>
-
+				<div class="collapse navbar-collapse navbar-right justify-content-end mr-md-5" id="navbarToggler">
+					<ul class="nav navbar-nav nav-list text-center my-lg-0"> <!-- replace text-center with my-2 for left-aligned dropdown-->
+						<li class="nav-item">
+							<a class="nav-link nav_style_selected" href="index.html">PROJECTS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav_style " href="about.html">ABOUT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav_style" href="static/img/MarcyHeld_UXDesign_Resume.pdf" target="_blank">RESUME</a>
+						</li>
+					</ul>
+				</div>
 			</nav>
 
 		</header>
 
-		<div class="container-fluid wrapper">
-			<div class="row" id="top" data-anchor="top">
+		<div class="container-fluid">
+			<div class="row">
 				<div class="col-lg">
-					<p class = "homepage_heading">Marcy &nbsp; Held</p>
-					<p class = "homepage_subheading">Interaction designer</p>
+					<p class="index_heading text-center">Marcy Held</p>
+					<p class="index_headingB text-center">INTERACTION DESIGNER</p>
+					<p class="index_headingC text-center">Crafting experiences, conducting research, and writing code</p>
 				</div>
 			</div>
 		</div>
+
 
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-md-3">
-					<img class="hompage_meimg full-width" src="static/img/homepage_me.png">
-				</div>
 
-				<div class="col-md-8">
-					<p class="homepage_topquote">I believe in an iterative approach to problem solving, driven by user research, and that thoughtful design can have a positive social impact.</p>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- Portfolio -->
-
-		<div class="container-fluid about_container">
-			<div class="row">
-
-				<div class="col-md-4 col-sm-8">
-					<p class="portfolio_heading" id="portfolio" data-anchor="portfolio">PORTFOLIO</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="container-fluid">
-			<div class="row">
-
-				<div class="col-md-4 image_container text-center">
-					<a href="localvote.html"><img src = "static/img/homepage_localvote.jpg" class = "homepage_projectlink">
+				<div class="col-md-4 image_container text-center"> <!-- COMMENT OUTtext-center -->
+					<p class="proj_heading">LOCAL VOTE</p>
+					<p class="proj_subheading">UI + UX design</p>
+					<a href="localvote.html"><img src = "static/img/homepage_localvote.jpg" class = "index_proj">
+						<!-- COMMENT OUT
 					<div class="middle">
 						<div class="proj_text">LOCAL VOTE</div>
-					</div>
+					</div> -->
+
 					</a>
 				</div>
 
 				<div class="col-md-4 image_container text-center">
-					<a href="google.html"><img src="static/img/homepage_google.jpg" class = "homepage_projectlink">
+					<p class="proj_heading">SUMMER AT GOOGLE</p>
+					<p class="proj_subheading">UX design + writing</p>
+					<a href="google.html"><img src="static/img/homepage_google.jpg" class = "index_proj">
+						<!-- COMMENT OUT
 					<div class="middle">
 						<div class="proj_text">SUMMER @ GOOGLE NYC</div>
-					</div>
+					</div> -->
+
 					</a>
 				</div>
 
 				<div class="col-md-4 image_container text-center">
-					<a href="lsahonors.html"><img src="static/img/homepage_lsa.jpg" class = "homepage_projectlink">
+					<p class="proj_heading">LSA HONORS</p>
+					<p class="proj_subheading">Usability testing + research</p>
+					<a href="lsahonors.html"><img src="static/img/homepage_lsa.jpg" class = "index_proj">
+
+						<!-- COMMENT OUT
 					<div class="middle">
 						<div class="proj_text">LSA HONORS</div>
-					</div>
+					</div> -->
+					</a>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- <div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-4 image_container text-center">
+					<p class="proj_headingB">SEEING HUMOR</p>
+					<p class="proj_subheadingB">Info visualization + architecture</p>
+					<a href="google.html"><img src="static/img/homepage_google.jpg" class = "index_proj">
+					
+					</a>
+					
+				</div>
+
+				<div class="col-md-4 image_container text-center">
+					<p class="proj_headingB">501</p>
+					<p class="proj_subheadingB">Contextual inquiry</p>
+					<a href="localvote.html"><img src = "static/img/homepage_localvote.jpg" class = "index_proj">
+					
+					</a>
+				</div>
+
+				<div class="col-md-4 image_container text-center">
+					<p class="proj_headingB">SOUND INSTALLATION</p>
+					<p class="proj_subheadingB">Experience design (in progress)</p>
+					<a href="lsahonors.html"><img src="static/img/homepage_lsa.jpg" class = "index_proj">
+					
 					</a>
 				</div>
 
 			</div>
-		</div>
+		</div> -->
 
 		<!-- About -->
 
-		<div class="container-fluid about_container">
+		<!-- <div class="container-fluid about_container">
 			<div class="row">
 
 				<div class="col-md-4 col-sm-8">
@@ -146,25 +184,48 @@
 
 					<p class="bio_textB">Before coming to grad school at the University of Michigan I worked in radio and in art museums, and I received my B.A. in Global Studies with a minor in photography from Carnegie Mellon University in 2013.</p>
 
-					<p class="bio_textB">I am currently:</p>
+					<p class="bio_currentlyHeader">I am currently:</p>
 						<ul class="bio_text_currentList">
-							<li>conducting UX research to develop next-gen employment tools,</li>
-							<li>exploring agile development methodologies as they apply to managing web development projects,</li>
-							<li>combining my passions for design and data in a personal informatics project focused on sustainability,</li>
-							<li>building my skills in hardware prototyping in a UX capstone course
+							<li><b>conducting</b> UX research to develop next-gen employment tools</li>
+							<li><b>exploring</b> agile development methodologies as they apply to managing web development projects</li>
+							<li><b>combining</b> my passions for design and data in a personal informatics project focused on sustainability</li>
+							<li><b>building</b> my skills in hardware prototyping in a UX capstone course
 							</li>
 						</ul>
-
-					<p class="bio_textB">If you'd want to talk more about my past projects or current work, let's get in touch!</p>
 				</div>
 
 				<div class="col-md-2">
 				</div>
 
 			</div>
-		</div>
+		</div> -->
 
-		<div class="container-fluid skills_container">
+
+
+		<!-- <div class="container-fluid">
+			<div class="row">
+					<div class="col-md-3 col-xs-6 text-center">
+						<img src="static/img/about_research.png" class="bio_text_currentImg">
+						<p class="bio_text_currentList">Conducting UX research to develop next-gen employment tools</p>
+					</div>
+					<div class="col-md-3 col-xs-6 text-center">
+						<img src="static/img/about_agiledev.png" class="bio_text_currentImg">
+						<p class="bio_text_currentList">Exploring agile development methodologies as they apply to managing web development projects</p>
+					</div>
+					<div class="col-md-3 col-xs-6 text-center">
+						<img src="static/img/about_informatics.png" class="bio_text_currentImg">
+						<p class="bio_text_currentList">Combining my passions for design and data in a personal informatics project focused on sustainability</p>
+					</div>
+					<div class="col-md-3 col-xs-6 text-center">
+						<img src="static/img/about_699.png" class="bio_text_currentImg">
+						<p class="bio_text_currentList">Building my skills in hardware prototyping to create an interactive audio installation</p>
+					</div>
+			</div>
+		</div> -->
+
+
+
+		<!-- <div class="container-fluid skills_container">
 			<div class="row">
 
 				<div class="col-md-2">
@@ -234,13 +295,9 @@
 				</div>
 
 			</div>
-		</div>
+		</div> -->
 
 		<footer>
-
-			<div class="container-fluid text-center footer_text">
-				<p>mheld&nbsp;@&nbsp;umich&nbsp;.&nbsp;edu</p>
-			</div>
 
 			<div class="container-fluid footer_icons text-center">
 
@@ -253,7 +310,10 @@
 
 				<a href="https://github.com/marcyheld"><img class = "footer_logo" src="static/img/logo_github.png" alt="View Marcy's GitHub page"></a>
 
+			</div>
 
+			<div class="container-fluid text-center footer_text">
+				<p>MHELD@UMICH.EDU</p>
 			</div>
 
 		</footer>
