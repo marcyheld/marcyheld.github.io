@@ -452,6 +452,8 @@ header a:hover{
 	font-weight: bold;
 	text-decoration: underline;
 
+	padding-left: 5%;
+
 }
 
 .indiv_proj_processText {
@@ -469,10 +471,10 @@ header a:hover{
 .about_topquote {
 	font-family: "Roboto";
 	font-weight: 200;
-	font-size: 12px;
-	margin-top: 2%;
+	font-size: 30px;
+	margin-top: 5%;
 
-	padding-left: 5%;
+	padding-left: 10%;
 	/*padding-right: 3%;*/
 	/*text-align: justify;*/
 	/*font-weight: lighter;*/
