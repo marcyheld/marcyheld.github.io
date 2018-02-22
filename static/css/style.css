@@ -471,10 +471,11 @@ header a:hover{
 .about_topquote {
 	font-family: "Roboto";
 	font-weight: 200;
-	font-size: 30px;
+	font-size: 25px;
 	margin-top: 5%;
 
-	padding-left: 10%;
+	padding-left: 15%;
+	padding-right: 10%;
 	/*padding-right: 3%;*/
 	/*text-align: justify;*/
 	/*font-weight: lighter;*/
@@ -672,6 +673,16 @@ margin-right: 0%;
 
 	margin-top: 4%;
 	margin-bottom: -1%;
+
+}
+
+.about_topquote {
+	font-size: 30px;
+	padding-left: 15%;
+	padding-right: 30%;
+	/*padding-right: 3%;*/
+	/*text-align: justify;*/
+	/*font-weight: lighter;*/
 
 }
 
